@@ -88,7 +88,7 @@ async function createCardImage(IdCard, fieldSide) {
     cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
     cardImage.setAttribute("data-id", IdCard);
     
-    // Adicione ambas as classes aqui.
+
     cardImage.classList.add("card", "card-image"); 
 
     if(fieldSide === state.playerSides.player1) { 
@@ -98,7 +98,7 @@ async function createCardImage(IdCard, fieldSide) {
         cardImage.addEventListener("mouseover", ()=> {
             drawSelectCard(IdCard);
         });
-        // Adiciona um evento para esconder a caixa quando o mouse sai da carta
+      
         cardImage.addEventListener("mouseout", () => {
              hiddenCardDetails();
         });
@@ -108,7 +108,7 @@ async function createCardImage(IdCard, fieldSide) {
 }
 
 async function setCardsField(cardId) {
-    // Adicionado: Limpa o avatar antes do duelo começar
+   
     state.cardSprites.avatar.src = ""; 
 
     await removeAllCardsImages();
@@ -130,7 +130,7 @@ async function setCardsField(cardId) {
 
 async function drawCardsInfield(cardId, computerCardId) {
     // Player
-    state.fieldCards.player.className = ""; // limpa classes extras
+    state.fieldCards.player.className = ""; 
     state.fieldCards.player.classList.add("card-image");
     state.fieldCards.player.src = cardData[cardId].img;
 
@@ -153,10 +153,10 @@ async function showHiddenCardFieldsImages(value) {
     }
 }
 
-// Esta função agora apenas esconde a caixa de detalhes
+
 async function hiddenCardDetails() {
-    state.cardSprites.box.style.display = "flex"; // Mantém a box visível
-    state.cardSprites.avatar.src = ""; // Remove imagem
+    state.cardSprites.box.style.display = "flex"; 
+    state.cardSprites.avatar.src = ""; 
     state.cardSprites.name.innerText = "Selecione"; 
     state.cardSprites.type.innerText = "uma carta";
 }
@@ -198,9 +198,9 @@ async function removeAllCardsImages() {
     imgElements.forEach((img) => img.remove());
 }
 
-// Esta função agora mostra a caixa e preenche os detalhes da carta
+
 async function drawSelectCard(index) {
-    state.cardSprites.box.style.display = "flex"; // Mostra a caixa antes de preencher
+    state.cardSprites.box.style.display = "flex"; 
     state.cardSprites.avatar.src = cardData[index].img;
     state.cardSprites.name.innerText = cardData[index].name;
     state.cardSprites.type.innerText = "Attribute : " + cardData[index].type;
@@ -215,17 +215,17 @@ async function drawCards(cardNumbers, fieldSide) {
     } 
 }
 async function resetDuel() {
-    // Garante que a caixa de detalhes volta ao estado padrão
+   
     hiddenCardDetails();
 
-    // Esconde o botão de próximo duelo
+   
     state.actions.button.style.display = "none";
 
-    // Esconde as cartas do campo
+  
     state.fieldCards.player.style.display = "none";
     state.fieldCards.computer.style.display = "none";
 
-    // Reinicia o jogo
+    
     init();
 }
 
