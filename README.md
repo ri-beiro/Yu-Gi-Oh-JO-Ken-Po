@@ -2,6 +2,8 @@
 
 Bem-vindo ao **Yu-Gi-Oh / Jo-Ken-Po Duel**, um jogo de cartas inspirado no clássico mundo de Yu-Gi-Oh combinado com a mecânica de pedra, papel e tesoura! 💥
 
+**JOGO AINDA EM DESENVOLVIMENTO**
+
 ---
 
 ## 🎮 Sobre o Jogo
